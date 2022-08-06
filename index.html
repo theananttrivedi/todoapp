@@ -49,15 +49,30 @@
       <header>
         <div class="task-form-left-title">Cancel</div>
         <p class="task-form-main-title">Note</p>
-        <div class="task-form-right-title">Add</div>
+        <div id="add-todo" class="task-form-right-title">Add</div>
       </header>
       <form>
-        <input class="task-form-input-field" type="text" placeholder="Title" />
-        <input class="task-form-input-field" type="text" placeholder="Detail" />
+        <input
+          class="task-form-input-field"
+          name="title"
+          type="text"
+          placeholder="Title"
+        />
+        <input
+          class="task-form-input-field"
+          name="detail"
+          type="text"
+          placeholder="Detail"
+        />
 
-        <input class="task-form-input-field" type="datetime-local" />
+        <input
+          class="task-form-input-field"
+          name="datetime"
+          type="datetime-local"
+        />
         <div class="task-form-input-field-container">
           <input
+            name="isimportant"
             id="important-checkbox"
             class="task-form-input-checkbox"
             type="checkbox"
