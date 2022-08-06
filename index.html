@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/font/Inter/fonts.css" />
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <script defer src="static/js/app.js"></script>
+    <title>To Do App</title>
+  </head>
+  <body>
+    <nav>
+      <div class="left-title"></div>
+      <p class="main-title">Notesify</p>
+      <div class="right-title">+</div>
+    </nav>
+    <div class="task-form">
+      <header>
+        <div class="task-form-left-title">Cancel</div>
+        <p class="task-form-main-title">Note</p>
+        <div class="task-form-right-title">Add</div>
+      </header>
+      <form>
+        <input class="task-form-input-field" type="text" placeholder="Title" />
+        <input class="task-form-input-field" type="text" placeholder="Detail" />
+
+        <input class="task-form-input-field" type="datetime-local" />
+        <div class="task-form-input-field-container">
+          <input
+            id="important-checkbox"
+            class="task-form-input-checkbox"
+            type="checkbox"
+          />
+          <label for="important-checkbox">Important!</label>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
