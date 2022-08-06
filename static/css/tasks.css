@@ -1,9 +1,9 @@
 .task-form {
   display: flex;
-  height: 20rem;
-  background-color: rgb(184, 184, 184);
+  height: 24rem;
+  background-color: var(--gray6);
   position: fixed;
-  bottom: -20rem;
+  bottom: -24rem;
   width: 100%;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -79,9 +79,7 @@
   border-radius: 0.5rem;
   padding-inline: 0.5rem;
   font-weight: 400;
-  /* color: rgb(220, 220, 220); */
-  /* color: rgb(184, 184, 184); */
-  background-color: rgb(144, 144, 144);
+  background-color: var(--gray5);
   caret-color: rgb(0, 149, 246);
 }
 
@@ -90,7 +88,7 @@
 }
 
 .task-form-input-field::placeholder {
-  color: rgb(80, 80, 80);
+  color: var(--gray);
 }
 
 .task-form-input-field:not(:first-child) {
@@ -126,7 +124,7 @@
   height: 2.5rem;
   width: 2.5rem;
   display: inline-block;
-  background-color: whitesmoke;
+  background-color: var(--gray5);
   border: none;
   outline: none;
 }
