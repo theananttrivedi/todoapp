@@ -189,4 +189,58 @@ nav {
   border: none;
   outline: none;
 }
-/* .task-form-input-checkbox */
+
+/* TODOS */
+
+.todos {
+  position: fixed;
+  top: 5vh;
+  width: 100%;
+}
+
+.todo-item {
+  background-color: whitesmoke;
+  height: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 1.5vh;
+  padding-bottom: 1.5vh;
+  position: relative;
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+.todo-item:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.todo-title {
+  font-size: 1.5rem;
+}
+
+.important {
+  height: 8vh;
+  width: 1vh;
+  background-color: rgb(0, 149, 246);
+  position: absolute;
+  left: 0;
+}
+
+.todo-complete-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.5vh;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 1px solid rgb(0, 149, 246);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-complete-button.complete {
+  font-size: 1.8rem;
+  background-color: rgb(0, 149, 246);
+  color: white;
+}
