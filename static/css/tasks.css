@@ -1,0 +1,150 @@
+.task-form {
+  display: flex;
+  height: 20rem;
+  background-color: rgb(184, 184, 184);
+  position: fixed;
+  bottom: -20rem;
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  transition: bottom 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.task-form.active {
+  display: flex;
+  bottom: 0;
+  transition: bottom 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.task-form header {
+  position: absolute;
+  top: 0;
+  height: 3rem;
+  width: 100%;
+  background-color: whitesmoke;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  color: rgb(0, 149, 246);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.task-form-main-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #151515;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.task-form-right-title {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  color: rgb(0, 149, 246);
+  font-size: 1.5rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.task-form-left-title {
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  color: rgb(0, 149, 246);
+  font-size: 1.5rem;
+  font-weight: 400;
+  vertical-align: top;
+}
+
+.task-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 4.8rem;
+  height: 15rem;
+  width: 100%;
+}
+
+.task-form-input-field {
+  width: 90%;
+  height: 2.6rem;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding-inline: 0.5rem;
+  font-weight: 400;
+  /* color: rgb(220, 220, 220); */
+  /* color: rgb(184, 184, 184); */
+  background-color: rgb(144, 144, 144);
+  caret-color: rgb(0, 149, 246);
+}
+
+.task-form-input-field:focus {
+  outline: none;
+}
+
+.task-form-input-field::placeholder {
+  color: rgb(80, 80, 80);
+}
+
+.task-form-input-field:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.task-form-input-field-container {
+  height: 2.5rem;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 90%;
+}
+
+.task-form-input-checkbox {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-right: 0.5rem;
+  position: relative;
+  display: inline-block;
+  border: none;
+}
+
+.task-form-input-checkbox::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "\00a0";
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: inline-block;
+  background-color: whitesmoke;
+  border: none;
+  outline: none;
+}
+
+.task-form-input-checkbox:checked::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "\2713";
+  font-size: 2.5rem;
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: rgb(0, 149, 246);
+  border: none;
+  outline: none;
+}

@@ -4,29 +4,61 @@
   box-sizing: border-box;
   font-family: "Inter";
 }
+
 :root {
-  --size1: 0.5rem;
-  --size2: 0.75rem;
-  --size3: 1rem;
-  --size4: 1.5rem;
-  --size5: 3rem;
-  --size6: 6rem;
-  --size7: 8rem;
-  --size8: 16rem;
-  --size9: 32rem;
+  --gray: rgb(142, 142, 147);
+  --gray2: rgb(174, 174, 178);
+  --gray3: rgb(199, 199, 204);
+  --gray4: rgb(209, 209, 214);
+  --gray5: rgb(229, 229, 234);
+  --gray6: rgb(242, 242, 247);
+  --grayd: rgb(142, 142, 147);
+  --grayd2: rgb(99, 99, 102);
+  --grayd3: rgb(72, 72, 74);
+  --grayd4: rgb(58, 58, 60);
+  --grayd5: rgb(44, 44, 46);
+  --grayd6: rgb(28, 28, 30);
+  --red: rgb(255, 59, 48);
+  --redd: rgb(255, 69, 58);
+  --orange: rgb(255, 149, 0);
+  --oranged: rgb(255, 159, 10);
+  --yellow: rgb(255, 204, 0);
+  --yellowd: rgb(255, 214, 10);
+  --green: rgb(52, 199, 89);
+  --greend: rgb(48, 209, 88);
+  --mint: rgb(0, 199, 190);
+  --mintd: rgb(102, 212, 207);
+  --teal: rgb(48, 176, 199);
+  --teald: rgb(64, 200, 224);
+  --cyan: rgb(50, 173, 230);
+  --cyand: rgb(100, 210, 255);
+  --blue: rgb(0, 122, 255);
+  --blued: rgb(10, 132, 255);
+  --indigo: rgb(88, 86, 214);
+  --indigod: rgb(94, 92, 230);
+  --purple: rgb(175, 82, 222);
+  --purpled: rgb(191, 90, 242);
+  --pink: rgb(255, 45, 85);
+  --pinkd: rgb(255, 55, 95);
+  --brown: rgb(162, 132, 94);
+  --brownd: rgb(172, 142, 104);
 }
 
 body {
   height: 100%;
   width: 100%;
+  background-color: rgb(199, 199, 204);
+}
+:root {
+  --title-size: 3rem;
 }
 
 nav {
   position: absolute;
   top: 0;
-  height: 3rem;
+  height: var(--title-size);
   width: 100%;
-  background-color: rgb(220, 220, 220);
+  background-color: whitesmoke;
 }
 
 .main-title {
@@ -61,197 +93,4 @@ nav {
   font-size: 2.4rem;
   font-weight: 400;
   vertical-align: top;
-}
-
-/* Task Form */
-.task-form {
-  display: flex;
-  height: 20rem;
-  background-color: rgb(220, 220, 220);
-  position: fixed;
-  bottom: -20rem;
-  width: 100%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  transition: bottom 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.task-form.active {
-  display: flex;
-  bottom: 0;
-  transition: bottom 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.task-form header {
-  position: absolute;
-  top: 0;
-  height: 3rem;
-  width: 100%;
-  background-color: whitesmoke;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  color: rgb(0, 149, 246);
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.task-form-main-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #151515;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.task-form-right-title {
-  position: absolute;
-  top: 50%;
-  right: 0.5rem;
-  transform: translateY(-50%);
-  color: rgb(0, 149, 246);
-  font-size: 1.5rem;
-  font-weight: 600;
-  vertical-align: middle;
-}
-
-.task-form-left-title {
-  position: absolute;
-  top: 50%;
-  left: 0.5rem;
-  transform: translateY(-50%);
-  color: rgb(0, 149, 246);
-  font-size: 1.5rem;
-  font-weight: 400;
-  vertical-align: top;
-}
-
-.task-form form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 4.8rem;
-  height: 15rem;
-  width: 100%;
-}
-
-.task-form-input-field {
-  width: 90%;
-  height: 2.6rem;
-  font-size: 1.6rem;
-  border: none;
-  border-radius: 0.5rem;
-}
-
-.task-form-input-field:not(:first-child) {
-  margin-top: 0.5rem;
-}
-
-.task-form-input-field-container {
-  height: 2.5rem;
-  font-size: 1.6rem;
-  border: none;
-  border-radius: 0.5rem;
-  margin-top: 0.5rem;
-  display: flex;
-  align-items: center;
-  width: 90%;
-}
-
-.task-form-input-checkbox {
-  height: 2.5rem;
-  width: 2.5rem;
-  margin-right: 0.5rem;
-  position: relative;
-  display: inline-block;
-  border: none;
-}
-
-.task-form-input-checkbox::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "\00a0";
-  display: block;
-  height: 2.5rem;
-  width: 2.5rem;
-  display: inline-block;
-  background-color: whitesmoke;
-  border: none;
-  outline: none;
-}
-
-.task-form-input-checkbox:checked::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "\2713";
-  font-size: 2.5rem;
-  display: inline-block;
-  height: 2.5rem;
-  width: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: rgb(0, 149, 246);
-  border: none;
-  outline: none;
-}
-
-/* TODOS */
-
-.todos {
-  position: fixed;
-  top: 3rem;
-  width: 100%;
-}
-
-.todo-item {
-  background-color: whitesmoke;
-  height: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-left: 1rem;
-  padding-bottom: 1rem;
-  position: relative;
-  border-bottom: 1px solid rgb(220, 220, 220);
-}
-
-.todo-item:not(:first-child) {
-  margin-top: 0.5rem;
-}
-
-.todo-title {
-  font-size: 1.5rem;
-}
-
-.important {
-  height: 5rem;
-  width: 0.6rem;
-  background-color: rgb(0, 149, 246);
-  position: absolute;
-  left: 0;
-}
-
-.todo-complete-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 1rem;
-  height: 1.5rem;
-  width: 1.5rem;
-  border: 1px solid rgb(0, 149, 246);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.todo-complete-button.complete {
-  font-size: 1.8rem;
-  background-color: rgb(0, 149, 246);
-  color: white;
 }
