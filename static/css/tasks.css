@@ -1,9 +1,9 @@
 .task-form {
   display: flex;
-  height: 24rem;
+  height: 15rem;
   background-color: var(--gray6);
   position: fixed;
-  bottom: -24rem;
+  bottom: -15rem;
   width: 100%;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -19,14 +19,16 @@
 .task-form header {
   position: absolute;
   top: 0;
-  height: 3rem;
+  height: 2.5rem;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: var(--gray6);
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   color: rgb(0, 149, 246);
   font-size: 1rem;
   font-weight: 400;
+  border-bottom: 1px solid var(--gray4);
+  border-top: 1px solid var(--gray4);
 }
 
 .task-form-main-title {
@@ -35,7 +37,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: #151515;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
@@ -45,7 +47,7 @@
   right: 0.5rem;
   transform: translateY(-50%);
   color: rgb(0, 149, 246);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 600;
   vertical-align: middle;
 }
@@ -56,7 +58,7 @@
   left: 0.5rem;
   transform: translateY(-50%);
   color: rgb(0, 149, 246);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   vertical-align: top;
 }
@@ -66,15 +68,15 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  top: 4.8rem;
-  height: 15rem;
+  top: 3rem;
+  height: 10rem;
   width: 100%;
 }
 
 .task-form-input-field {
   width: 90%;
-  height: 2.6rem;
-  font-size: 1.6rem;
+  height: 1.8rem;
+  font-size: 1.2rem;
   border: none;
   border-radius: 0.5rem;
   padding-inline: 0.5rem;
@@ -96,8 +98,8 @@
 }
 
 .task-form-input-field-container {
-  height: 2.5rem;
-  font-size: 1.6rem;
+  height: 2rem;
+  font-size: 1.2rem;
   border: none;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
@@ -107,8 +109,8 @@
 }
 
 .task-form-input-checkbox {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
   margin-right: 0.5rem;
   position: relative;
   display: inline-block;
@@ -121,8 +123,8 @@
   left: 0;
   content: "\00a0";
   display: block;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
   display: inline-block;
   background-color: var(--gray5);
   border: none;
@@ -136,8 +138,8 @@
   content: "\2713";
   font-size: 2.5rem;
   display: inline-block;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;

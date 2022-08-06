@@ -50,7 +50,7 @@ body {
   background-color: var(--gray6);
 }
 :root {
-  --title-size: 3.8rem;
+  --title-size: 2.5rem;
 }
 
 nav {
@@ -68,7 +68,7 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #151515;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 
