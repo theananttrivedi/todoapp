@@ -77,10 +77,20 @@ const inputFieldValues = {
   isimportant: false,
 };
 
+function formatDate(dateString) {
+  if (dateString === "" || dateString === null || dateString === undefined)
+    return "";
+  const date = new Date(dateString);
+  if (String(date.valueOf()) === NaN) return "";
+  return (
+    date.getDate() + " " + date.toLocaleString("default", { month: "long" })
+  );
+}
+
 function setInput() {
   inputFieldValues.title = inputTitle.value;
   inputFieldValues.detail = inputDetail.value;
-  inputFieldValues.datetime = inputDatetime.value;
+  inputFieldValues.datetime = formatDate(inputDatetime.value);
   inputFieldValues.isimportant = inputIsimportant.checked;
 }
 
@@ -116,11 +126,12 @@ function createNoteElement({ title, detail, datetime, isimportant }) {
     todoItemHolder.appendChild(todoIsimportantHolder);
   }
   todoItemHolder.appendChild(todoCompleteButtonHolder);
+  todoItemHolder.appendChild(todoDatetimeHolder);
 
   // Setting Values
   todoTitleHolder.innerText = title;
   todoIsimportantHolder.checked = isimportant;
-  todoDatetimeHolder.innerText = datetime;
+  todoDatetimeHolder.innerHTML = datetime;
 
   //Adding Event Listeners
   todoItemHolder = addImportantToggleEventHandler(todoItemHolder);
@@ -133,5 +144,5 @@ function createNoteElement({ title, detail, datetime, isimportant }) {
 
 addTodo.addEventListener("click", () => {
   setInput();
-  todos.appendChild(createNoteElement(inputFieldValues));
+  todos.prepend(createNoteElement(inputFieldValues));
 });
