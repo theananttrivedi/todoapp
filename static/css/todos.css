@@ -24,6 +24,7 @@
   position: relative;
   border-bottom: 1px solid rgb(220, 220, 220);
   border-radius: 0.5rem;
+  cursor: default;
 }
 
 .todo-item {
@@ -44,12 +45,12 @@
 }
 
 .important {
-  height: 3.5rem;
   width: 0.6rem;
   background-color: rgb(0, 149, 246);
   position: absolute;
   left: 0;
   top: 0;
+  bottom: 0;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
 }
@@ -65,10 +66,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .todo-complete-button.complete {
   font-size: 1.8rem;
   background-color: rgb(0, 149, 246);
   color: white;
+  cursor: pointer;
 }
