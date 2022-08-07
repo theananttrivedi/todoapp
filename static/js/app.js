@@ -102,6 +102,13 @@ function setInput() {
   inputFieldValues.isimportant = inputIsimportant.checked;
 }
 
+function setInputReset() {
+  inputTitle.value = "";
+  inputDetail.value = "";
+  inputDatetime.value = "";
+  inputIsimportant.checked = false;
+}
+
 {
   /* <div class="todo-item">
 <p class="todo-title">Revise Python</p>
@@ -142,7 +149,7 @@ function createNoteElement({ title, detail, datetime, isimportant }) {
   todoDatetimeHolder.innerHTML = datetime;
 
   //Adding Event Listeners
-  todoItemHolder = addImportantToggleEventHandler(todoItemHolder);
+  // todoItemHolder = addImportantToggleEventHandler(todoItemHolder);
   todoCompleteButtonHolder = addCompleteToggleEventHolder(
     todoCompleteButtonHolder
   );
@@ -152,7 +159,19 @@ function createNoteElement({ title, detail, datetime, isimportant }) {
 
 function addNoteToTheToDoList() {
   setInput();
-  todos.prepend(createNoteElement(inputFieldValues));
+  let note = createNoteElement(inputFieldValues);
+  note.addEventListener("click", (e) => {
+    console.log(e.currentTarget);
+    console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
+    console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
+
+    openTodoItemWindow({
+      node: e.currentTarget,
+    });
+  });
+  todos.prepend(note);
+  setInputReset();
+  taskForm.classList.remove("active");
 }
 inputTitle.addEventListener("keyup", (e) => {
   if (e.target.value.trim().length === 0) {
