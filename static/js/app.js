@@ -9,11 +9,17 @@ const inputDatetime = document.querySelector('input[name="datetime"]');
 const inputDetail = document.querySelector('input[name="detail"]');
 const inputIsimportant = document.querySelector('input[name="isimportant"]');
 const addTodo = document.getElementById("add-todo");
+const modal = document.querySelector(".todo-item-modal-container");
+const deleteButton = document.querySelector(".todo-delete-button");
+const cancelButtonModal = document.querySelector(".cancel-button");
 addButton.addEventListener("click", () => {
   taskForm.classList.add("active");
   inputTitle.focus();
 });
 
+cancelButtonModal.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
 cancelButton.addEventListener("click", () => {
   taskForm.classList.remove("active");
   inputTitle.blur();
@@ -158,10 +164,21 @@ inputTitle.addEventListener("keyup", (e) => {
   }
 });
 
-function openTodoItemWindow({ title, detail, datetime, isimportant }) {}
-
+function openTodoItemWindow({ node }) {
+  modal.classList.add("active");
+  deleteButton.addEventListener("click", () => {
+    node.remove();
+    modal.classList.remove("active");
+  });
+}
 todoItems.forEach((todoItem) => {
   todoItem.addEventListener("click", (e) => {
-    openTodoItemWindow();
+    console.log(e.currentTarget);
+    console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
+    console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
+
+    openTodoItemWindow({
+      node: e.currentTarget,
+    });
   });
 });
