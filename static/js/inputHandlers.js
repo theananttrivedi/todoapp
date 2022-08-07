@@ -5,16 +5,6 @@ const inputFieldValues = {
   isimportant: false,
 };
 
-function formatDate(dateString) {
-  if (dateString === "" || dateString === null || dateString === undefined)
-    return "";
-  const date = new Date(dateString);
-  if (String(date.valueOf()) === NaN) return "";
-  return (
-    date.getDate() + " " + date.toLocaleString("default", { month: "long" })
-  );
-}
-
 function setInput() {
   inputFieldValues.title = inputTitle.value;
   inputFieldValues.detail = inputDetail.value;
@@ -112,9 +102,9 @@ function openTodoItemWindow({ node }) {
 }
 todoItems.forEach((todoItem) => {
   todoItem.addEventListener("click", (e) => {
-    console.log(e.currentTarget);
-    console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
-    console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
+    // console.log(e.currentTarget);
+    // console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
+    // console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
 
     openTodoItemWindow({
       node: e.currentTarget,
