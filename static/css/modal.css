@@ -1,2 +1,73 @@
+.todo-item-modal-container {
+  position: fixed;
+  top: 2.5rem;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.todo-item-modal-container.active {
+  display: flex;
+}
+
 .todo-item-modal {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0.6rem);
+  height: 10rem;
+  width: 20rem;
+  border-radius: 2rem;
+  border: 1px solid var(--gray4);
+}
+
+.todo-modal-content {
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 0.5rem;
+  font-weight: 500;
+}
+
+.todo-modal-header {
+  position: absolute;
+  top: 0;
+  height: 2rem;
+  /* background-color: aqua; */
+  width: 100%;
+  border-bottom: 1px solid var(--gray4);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 500;
+}
+
+.todo-modal-footer {
+  position: absolute;
+  bottom: 0;
+  height: 2rem;
+  width: 100%;
+  border-top: 1px solid var(--gray4);
+  /* border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.todo-delete-button {
+  color: var(--red);
+}
+
+.cancel-button {
+  color: var(--blue);
+  font-weight: 600;
 }

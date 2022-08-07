@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="static/css/styles.css" />
     <link rel="stylesheet" href="static/css/todos.css" />
     <link rel="stylesheet" href="static/css/tasks.css" />
+    <link rel="stylesheet" href="static/css/modal.css" />
     <script defer src="static/js/app.js"></script>
     <title>To Do App</title>
   </head>
@@ -105,13 +106,23 @@
         <div class="todo-complete-button"></div>
       </div>
     </div>
-    <div class="todo-item-modal">
-      <div class="todo-delete-button">Delete</div>
-      <p class="todo-modal-title">Learn Advanced CSS</p>
-      <p class="todo-modal-date">12 July</p>
-      <div class="todo-modal-complete-button"></div>
-      <p class="ok-button">OK</p>
+    <div class="todo-item-modal-container">
+      <div class="todo-item-modal">
+        <header class="todo-modal-header">Are you sure?</header>
+        <section class="todo-modal-content">
+          Deleting this will be a permanent action and cannot be reversed
+        </section>
+        <footer class="todo-modal-footer">
+          <div class="todo-delete-button">Delete</div>
+          <p class="cancel-button">Cancel</p>
+        </footer>
+
+        <!-- <p class="todo-modal-title">Learn Advanced CSS</p>
+        <p class="todo-modal-date">12 July</p>
+        <div class="todo-modal-complete-button"></div> -->
+      </div>
     </div>
+
     <div class="task-form">
       <header>
         <div class="task-form-left-title">Cancel</div>
