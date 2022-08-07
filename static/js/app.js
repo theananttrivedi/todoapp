@@ -11,10 +11,12 @@ const inputIsimportant = document.querySelector('input[name="isimportant"]');
 const addTodo = document.getElementById("add-todo");
 addButton.addEventListener("click", () => {
   taskForm.classList.add("active");
+  inputTitle.focus();
 });
 
 cancelButton.addEventListener("click", () => {
   taskForm.classList.remove("active");
+  inputTitle.blur();
 });
 
 function addImportantToggleEventHandler(todoItem) {
@@ -142,7 +144,16 @@ function createNoteElement({ title, detail, datetime, isimportant }) {
   return todoItemHolder;
 }
 
-addTodo.addEventListener("click", () => {
+function addNoteToTheToDoList() {
   setInput();
   todos.prepend(createNoteElement(inputFieldValues));
+}
+inputTitle.addEventListener("keyup", (e) => {
+  if (e.target.value.trim().length === 0) {
+    addTodo.removeEventListener("click", addNoteToTheToDoList);
+    addTodo.style.color = "var(--gray2)";
+  } else {
+    addTodo.style.color = "rgb(0, 149, 246)";
+    addTodo.addEventListener("click", addNoteToTheToDoList);
+  }
 });

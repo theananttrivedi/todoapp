@@ -46,7 +46,7 @@
   top: 50%;
   right: 0.5rem;
   transform: translateY(-50%);
-  color: rgb(0, 149, 246);
+  color: var(--gray2);
   font-size: 1.2rem;
   font-weight: 600;
   vertical-align: middle;
