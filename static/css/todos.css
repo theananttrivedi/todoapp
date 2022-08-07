@@ -67,6 +67,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border-radius: 0.25rem;
 }
 
 .todo-complete-button.complete {
