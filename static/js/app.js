@@ -32,18 +32,18 @@ function addImportantToggleEventHandler(todoItem) {
   });
   return todoItem;
 }
-todoItems.forEach((todoItem) => {
-  todoItem.addEventListener("click", (e) => {
-    // Todo doesn't have a p tag with important class
-    if (todoItem.querySelector('p[class="important"]') === null) {
-      const pElementWithImportantClass = document.createElement("p");
-      pElementWithImportantClass.classList.add("important");
-      todoItem.appendChild(pElementWithImportantClass);
-    } else {
-      todoItem.querySelector('p[class="important"]').remove();
-    }
-  });
-});
+// todoItems.forEach((todoItem) => {
+//   todoItem.addEventListener("click", (e) => {
+//     // Todo doesn't have a p tag with important class
+//     if (todoItem.querySelector('p[class="important"]') === null) {
+//       const pElementWithImportantClass = document.createElement("p");
+//       pElementWithImportantClass.classList.add("important");
+//       todoItem.appendChild(pElementWithImportantClass);
+//     } else {
+//       todoItem.querySelector('p[class="important"]').remove();
+//     }
+//   });
+// });
 
 function addCompleteToggleEventHolder(todoCompleteButton) {
   todoCompleteButton.addEventListener("click", (e) => {
@@ -156,4 +156,12 @@ inputTitle.addEventListener("keyup", (e) => {
     addTodo.style.color = "rgb(0, 149, 246)";
     addTodo.addEventListener("click", addNoteToTheToDoList);
   }
+});
+
+function openTodoItemWindow({ title, detail, datetime, isimportant }) {}
+
+todoItems.forEach((todoItem) => {
+  todoItem.addEventListener("click", (e) => {
+    openTodoItemWindow();
+  });
 });
