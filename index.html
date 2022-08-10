@@ -17,7 +17,9 @@
       <p class="main-title">Notesify</p>
       <div class="right-title">+</div>
     </nav>
-    <div class="todos"></div>
+    <div class="todos" id="todos">
+      <!-- To be filled by Javascript -->
+    </div>
 
     <div class="todo-item-modal-container">
       <div class="todo-item-modal">
@@ -73,10 +75,15 @@
       </form>
     </div>
     <script src="static/js/utils.js"></script>
-    <script src="static/js/data.js"></script>
+    <!-- <script src="static/js/data.js"></script>
     <script src="static/js/selectors.js"></script>
     <script src="static/js/eventListeners.js"></script>
     <script src="static/js/app.js"></script>
-    <script src="static/js/inputHandlers.js"></script>
+    <script src="static/js/inputHandlers.js"></script> -->
+    <script src="static/js/TodoListBinding.js"></script>
+    <script>
+      const todoListElement = document.getElementById("todos");
+      const todoListBinding = new TodoListBinding(todoListElement);
+    </script>
   </body>
 </html>

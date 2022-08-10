@@ -30,3 +30,16 @@ const DATA = [
     isImportant: false,
   },
 ];
+
+class DataStore {
+  constructor() {
+    this.notes = JSON.parse(localStorage.getItem("notes") || "[]");
+  }
+  addNote({ title, date, isCompleted, isImportant }) {
+    try {
+      this.notes.push({ title, date, isCompleted, isImportant });
+    } catch (error) {
+      throw error;
+    }
+  }
+}
