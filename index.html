@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="task-form">
+    <div class="task-form" id="task-form">
       <header>
         <div class="task-form-left-title">Cancel</div>
         <p class="task-form-main-title">Note</p>
@@ -81,9 +81,24 @@
     <script src="static/js/app.js"></script>
     <script src="static/js/inputHandlers.js"></script> -->
     <script src="static/js/TodoListBinding.js"></script>
+    <script src="static/js/TodoFormBinding.js"></script>
     <script>
       const todoListElement = document.getElementById("todos");
+      const todoFormElement = document.getElementById("task-form");
+      const titleField = document.querySelector('input[name="title"]');
+      const dateField = document.querySelector('input[name="datetime"]');
+      const isImportantField = document.querySelector(
+        'input[name="isimportant"]'
+      );
+      const isCompletedField = document.getElementById("important-checkbox");
       const todoListBinding = new TodoListBinding(todoListElement);
+      const todoFormBinding = new TodoFormBinding(
+        todoFormElement,
+        titleField,
+        dateField,
+        isCompletedField,
+        isImportantField
+      );
     </script>
   </body>
 </html>
