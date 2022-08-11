@@ -15,7 +15,7 @@
     <nav>
       <div class="left-title"></div>
       <p class="main-title">Notesify</p>
-      <div class="right-title">+</div>
+      <div class="right-title" id="new-note">+</div>
     </nav>
     <div class="todos" id="todos">
       <!-- To be filled by Javascript -->
@@ -91,14 +91,33 @@
         'input[name="isimportant"]'
       );
       const isCompletedField = document.getElementById("important-checkbox");
+      const addButton = document.getElementById("add-todo");
+      const cancelButton = document.querySelector(".task-form-left-title");
       const todoListBinding = new TodoListBinding(todoListElement);
       const todoFormBinding = new TodoFormBinding(
         todoFormElement,
         titleField,
         dateField,
         isCompletedField,
-        isImportantField
+        isImportantField,
+        addButton,
+        cancelButton
       );
+
+      const newNote = document.getElementById("new-note");
+      // or use arrow function to save this to refer
+      // to the object
+      newNote.onclick = todoFormBinding.open.bind(todoFormBinding);
+
+      todoFormBinding.addTodoOnClick((formValuesFunc) => {
+        todoListBinding.add({
+          title: formValuesFunc.title,
+          date: formValuesFunc.date,
+          isCompleted: false,
+          isImportant: formValuesFunc.isImportant,
+        });
+        todoFormBinding.resetFormValues();
+      });
     </script>
   </body>
 </html>

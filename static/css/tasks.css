@@ -51,6 +51,7 @@
   font-weight: 600;
   vertical-align: middle;
   cursor: pointer;
+  pointer-events: none;
 }
 
 .task-form-left-title {
