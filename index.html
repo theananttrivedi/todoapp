@@ -21,20 +21,49 @@
       <!-- To be filled by Javascript -->
     </div>
 
-    <div class="todo-item-modal-container">
+    <div id="todo-modal" class="todo-item-modal-container">
       <div class="todo-item-modal">
-        <header class="todo-modal-header">Are you sure?</header>
+        <header class="todo-modal-header">Edit</header>
         <section class="todo-modal-content">
-          Deleting this will be a permanent action and cannot be reversed
+          <div class="todo-modal-form" id="modal-form">
+            <form>
+              <input
+                id="modal-title"
+                class="task-form-input-field"
+                name="title"
+                type="text"
+                placeholder="Title"
+              />
+              <input
+                id="modal-detail"
+                class="task-form-input-field"
+                name="detail"
+                type="text"
+                placeholder="Detail"
+              />
+
+              <input
+                id="modal-date"
+                class="task-form-input-field"
+                name="datetime"
+                type="datetime-local"
+              />
+              <div class="task-form-input-field-container">
+                <input
+                  name="isimportant"
+                  id="modal-isimportant"
+                  class="task-form-input-checkbox"
+                  type="checkbox"
+                />
+                <label for="important-checkbox">Important!</label>
+              </div>
+            </form>
+          </div>
         </section>
         <footer class="todo-modal-footer">
-          <div class="todo-delete-button">Delete</div>
-          <p class="cancel-button">Cancel</p>
+          <div id="modal-delete" class="todo-delete-button">Delete</div>
+          <p id="modal-ok" class="cancel-button">OK</p>
         </footer>
-
-        <!-- <p class="todo-modal-title">Learn Advanced CSS</p>
-        <p class="todo-modal-date">12 July</p>
-        <div class="todo-modal-complete-button"></div> -->
       </div>
     </div>
 
@@ -82,6 +111,7 @@
     <script src="static/js/inputHandlers.js"></script> -->
     <script src="static/js/TodoListBinding.js"></script>
     <script src="static/js/TodoFormBinding.js"></script>
+    <script src="static/js/TodoModalBinding.js"></script>
     <script>
       const todoListElement = document.getElementById("todos");
       const todoFormElement = document.getElementById("task-form");
@@ -118,6 +148,24 @@
         });
         todoFormBinding.resetFormValues();
       });
+
+      const todoModalElement = document.getElementById("todo-modal");
+      const deleteButton = document.getElementById("modal-delete");
+      const okButton = document.getElementById("modal-ok");
+      const modalTodoFormElement = document.getElementById("modal-form");
+      const modalTitleField = document.getElementById("modal-title");
+      const modalDateField = document.getElementById("modal-date");
+      const modalIsImportantField =
+        document.getElementById("modal-isimportant");
+      const todoModalBinding = new TodoModalBinding(
+        todoModalElement,
+        deleteButton,
+        okButton,
+        modalTodoFormElement,
+        modalTitleField,
+        modalDateField,
+        modalIsImportantField
+      );
     </script>
   </body>
 </html>

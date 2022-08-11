@@ -1,19 +1,3 @@
-// function addNoteToTheToDoList() {
-//   setInput();
-//   let note = createNoteElement(inputFieldValues);
-//   //   note.addEventListener("click", (e) => {
-//   //     console.log(e.currentTarget);
-//   //     console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
-//   //     console.log(e.currentTarget.querySelector(".todo-title").innerHTML);
-
-//   //     openTodoItemWindow({
-//   //       node: e.currentTarget,
-//   //     });
-//   //   });
-//   todos.prepend(note);
-//   setInputReset();
-//   taskForm.classList.remove("active");
-
 class TodoFormBinding {
   constructor(
     todoForm,
